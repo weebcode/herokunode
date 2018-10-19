@@ -17,7 +17,6 @@ express()
     try {
       const client = await pool.connect();
 
-      // await client.query("DROP TABLE IF EXISTS test_table ");
       await client.query("CREATE TABLE IF NOT EXISTS test_table (lovely TIMESTAMP)");
       await client.query("INSERT INTO test_table (lovely) VALUES (NOW())");
 
